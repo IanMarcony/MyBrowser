@@ -16,7 +16,11 @@
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:padding="10dp"
+            android:hint="URL do site"
             android:layout_margin="10dp"
+            android:background="#ddd"
+            android:inputType="textWebEditText"
+            android:imeOptions="actionDone"
             />
         <Button
             android:id="@+id/btnSearch"
@@ -28,13 +32,58 @@
             android:text="Search"
             android:drawableRight="@drawable/ic_search_browser"/>
 
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="#ff5722"
+            android:src="@drawable/ic_btn_back"/>
+        <ImageButton
+            android:id="@+id/btnForward"
+            android:layout_width="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="40dp"
+            android:background="#ff5722"
+            android:src="@drawable/ic_btn_forward"/>
+        <TextView
+            android:id="@+id/urlView"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#ddd"
+            android:padding="10dp"
+            android:textColor="#000"
+            android:layout_marginLeft="5dp"/>
     </LinearLayout>
 
-    <WebView
-        android:id="@+id/myBrowser"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="10dp"/>
+        android:layout_height="match_parent">
+
+
+
+        <WebView
+            android:id="@+id/myBrowser"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+        </WebView>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+    </FrameLayout>
 
 
 
